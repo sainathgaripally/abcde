@@ -12,7 +12,7 @@ resource "aws_vpc" "vpc-one" {
 }
 
 resource "aws_subnet" "subnets" {
-    for_each = var.subnetnames
+    for_each = var.subnetcidrs
     vpc_id = aws_vpc.vpc-one.id
     cidr_block = each.value
 }
