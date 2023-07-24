@@ -12,11 +12,12 @@ resource "aws_vpc" "vpc-one" {
 }
 
 resource "aws_subnet" "subnets" {
+    for_each = var.subnetnames
     count = length(var.subnetcidrs)
     vpc_id = aws_vpc.vpc-one.id
     cidr_block = var.subnetcidrs[count.index]
     tags = {
-        Name = var.subnetnames[count.index]
+        Name = each.value
     }
 }
 
