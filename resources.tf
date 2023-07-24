@@ -12,7 +12,7 @@ resource "aws_vpc" "vpc-one" {
 }
 
 resource "aws_route_table" "rt" {
-    for_each = var.routnames
+    for_each = var.routenames
     vpc_id = aws_vpc.vpc-one.id
     tags = each.value
 }
