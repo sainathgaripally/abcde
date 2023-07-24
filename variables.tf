@@ -3,7 +3,7 @@ variable "vpccidr" {
     default = "10.0.0.0/16"
 }
 
-variable "routenames" {
+variable "subnetnames" {
     type = map(object({
         cidr_block = string
         map_public_ip_on_launch = bool
