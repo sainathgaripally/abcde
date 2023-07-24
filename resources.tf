@@ -11,9 +11,8 @@ resource "aws_vpc" "vpc-one" {
     }
 }
 
-resource "aws_subnet" "subnets" {
-    for_each = var.subnetcidrs
+resource "aws_route_table" "rt" {
     vpc_id = aws_vpc.vpc-one.id
-    cidr_block = each.value
+    tags = var.routenames
 }
 
