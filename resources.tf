@@ -11,9 +11,10 @@ resource "aws_vpc" "vpc-one" {
     }
 }
 
-resource "aws_route_table" "rt" {
-    for_each = var.routenames
+resource "aws_subnet" "subnets" {
+    for_each = var.subnetnames
     vpc_id = aws_vpc.vpc-one.id
-    tags = each.value
+    cidr_block = each.value.cidr_block
+    map_public_ip_on_launch = each.value.map_public_ip_on_launch
 }
 

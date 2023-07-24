@@ -4,9 +4,18 @@ variable "vpccidr" {
 }
 
 variable "routenames" {
-    type = map(object(string))
+    type = map(object({
+        cidr_block = string
+        map_public_ip_on_launch = bool
+    }))
     default = {
-        Name = "one"
-        Env = "dev"
+        inst1 = {
+            cidr_block = "10.0.0.0/24"
+            map_public_ip_on_launch = true
+        }
+        inst2 = {
+            cidr_block = "10.0.1.0/24"
+            map_public_ip_on_launch = false
+        }
     }
 }
