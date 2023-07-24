@@ -1,0 +1,3 @@
+security.tf
+.terraform/*
+.terraform.lock.hcl
