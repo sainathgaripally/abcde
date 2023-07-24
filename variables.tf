@@ -19,3 +19,10 @@ variable "subnetnames" {
         }
     }
 }
+
+variable "routetablenames" {
+    type = map(string)
+    default = {
+        Name = "One"
+    }
+}

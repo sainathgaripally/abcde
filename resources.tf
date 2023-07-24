@@ -16,5 +16,13 @@ resource "aws_subnet" "subnets" {
     vpc_id = aws_vpc.vpc-one.id
     cidr_block = each.value.cidr_block
     map_public_ip_on_launch = each.value.map_public_ip_on_launch
+    tags = {
+
+    }
+}
+
+resource "aws_route_table" "routetables" {
+    vpc_id = aws_vpc.vpc-one.id
+    tags = var.routetablenames
 }
 
