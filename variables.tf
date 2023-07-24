@@ -4,11 +4,8 @@ variable "vpccidr" {
 }
 
 variable "subnetcidrs" {
-    type = map(string)
-    default = {
-        Name = "10.0.0.0/24",
-        Name = "10.0.1.0/24"
-    }
+    type = list(string)
+    default = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
 variable "subnetnames" {
