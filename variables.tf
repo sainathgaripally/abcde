@@ -4,7 +4,7 @@ variable "vpccidr" {
 }
 
 variable "routenames" {
-    type = map(string)
+    type = map(object(string))
     default = {
         Name = "one"
         Env = "dev"
