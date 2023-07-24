@@ -12,6 +12,6 @@ variable "subnetcidrs" {
 }
 
 variable "subnetnames" {
-    type = set(string)
+    type = list(string)
     default = ["Subnet One", "Subnet Two"]
 }
