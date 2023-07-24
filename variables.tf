@@ -7,5 +7,6 @@ variable "routenames" {
     type = map(string)
     default = {
         Name = "one"
+        Env = "dev"
     }
 }
